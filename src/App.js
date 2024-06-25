@@ -1,11 +1,23 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-import sideBar from './sidebar'
+import SideBar from './sidebar';
+import Modal from './MoreModal';
 
 function App() {
+
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="Home">
-      <sideBar>
+      <SideBar />
     </div>
   );
 }
