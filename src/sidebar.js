@@ -14,19 +14,7 @@ import {
 } from 'react-icons/fa';
 import Modal from './MoreModal';
 
-function SideBar() {
-
-    
-  const [showModal, setShowModal] = useState(false);
-
-  const openModal = () => {
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
+function SideBar({ openModal }) {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -42,7 +30,6 @@ function SideBar() {
         <a href="#explore" className="sidebar-item">
           <FaCompass className="sidebar-icon" /> Explore
         </a>
-
         <a href="#messages" className="sidebar-item">
           <FaPaperPlane className="sidebar-icon" /> Messages
         </a>
@@ -67,7 +54,6 @@ function SideBar() {
           <FaBars className="sidebar-icon" /> More
         </a>
       </div>
-      {showModal && <Modal onClose={closeModal} />}
     </div>
   );
 }

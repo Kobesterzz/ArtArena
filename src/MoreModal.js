@@ -1,18 +1,30 @@
 import React from 'react';
 import './modal.css';
 
-const Modal = ({ onClose }) => {
+function Modal({ onClose, toggleDarkMode, isDarkMode }) {
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="modal-background">
-      <div className="modal">
-        <div className="modal-content">
-          <h2>More</h2>
-          <p>You can add whatever content you want in the modal here.</p>
-          <button onClick={onClose}>Close</button>
+    <div className="modal-backdrop" onClick={handleOverlayClick}>
+      <div className="modal-content">
+        <div className="modal-header">
+          <h2>More Options</h2>
+        </div>
+        <div className="modal-body">
+          <div className="modal-item">
+            <span>Dark Mode</span>
+            <button onClick={toggleDarkMode} className="dark-mode-toggle">
+              {isDarkMode ? 'On' : 'Off'}
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Modal;
