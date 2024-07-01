@@ -14,6 +14,7 @@ function Modal({ onClose, toggleDarkMode, isDarkMode }) {
         <div className="modal-header">
           <h2>More Options</h2>
         </div>
+        <hr/>
         <div className="modal-body">
           <div className="modal-item">
             <span>Dark Mode</span>

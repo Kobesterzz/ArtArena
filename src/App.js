@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import SideBar from './sidebar';
 import Modal from './MoreModal';
+import Feed from './Feed';
+
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -22,9 +24,19 @@ function App() {
   return (
     <div className={`Home ${isDarkMode ? 'dark-mode' : ''}`}>
       <SideBar openModal={openModal} />
-      {showModal && <Modal onClose={closeModal} toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />}
+      <div className="main-content">
+        <Feed />
+      </div>
+      {showModal && (
+        <Modal
+          onClose={closeModal}
+          toggleDarkMode={toggleDarkMode}
+          isDarkMode={isDarkMode}
+        />
+      )}
     </div>
   );
+
 }
 
 

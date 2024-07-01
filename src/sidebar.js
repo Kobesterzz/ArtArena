@@ -18,7 +18,7 @@ function SideBar({ openModal }) {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <h1>ArtArena</h1>
+        <h1 className="sidebar-item">ArtArena</h1>
       </div>
       <div className="sidebar-menu">
         <a href="#home" className="sidebar-item">

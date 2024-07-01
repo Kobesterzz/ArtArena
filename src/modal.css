@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(206, 200, 200, 0);
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -18,10 +18,11 @@
   border-radius: 5px;
   width: 300px;
   transition: all 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.503);
 }
 
 .Home.dark-mode .modal-content {
-  background: #333;
+  background: #353535;
   color: white;
 }
 
@@ -52,9 +53,30 @@
 }
 
 .Home.dark-mode .dark-mode-toggle {
-  background-color: #4a4a4a;
+  background-color: #353535;
 }
 
 .Home.dark-mode .dark-mode-toggle:hover {
   background-color: #6a6a6a;
+}
+
+.sidebar-item:hover {
+  color: #007bff;
+}
+
+.sidebar-icon {
+  margin-right: 10px;
+}
+
+.Home.dark-mode .sidebar {
+  background-color: #353535;
+  color: white;
+}
+
+.Home.dark-mode .sidebar-item {
+  color: white;
+}
+
+.Home.dark-mode .sidebar-item:hover {
+  color: #007bff;
 }
