@@ -14,7 +14,7 @@ import {
 } from 'react-icons/fa';
 import Modal from './MoreModal';
 
-function SideBar({ openModal }) {
+function SideBar({ openModal, openSearch, closeSearch }) {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -22,9 +22,9 @@ function SideBar({ openModal }) {
       </div>
       <div className="sidebar-menu">
         <a href="#home" className="sidebar-item">
-          <FaHome className="sidebar-icon" /> Home
+          <FaHome className="sidebar-icon" closeSearch={closeSearch}/> Home
         </a>
-        <a href="#search" className="sidebar-item">
+        <a href="#search" className="sidebar-item" onClick={openSearch}>
           <FaSearch className="sidebar-icon" /> Search
         </a>
         <a href="#explore" className="sidebar-item">
