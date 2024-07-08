@@ -14,14 +14,18 @@ import {
 } from 'react-icons/fa';
 import Modal from './MoreModal';
 
-function SideBar({ openModal, openSearch, closeSearch }) {
+
+function SideBar({ openModal, openSearch, closeSearch, navigateToPage }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
   return (
     <div className="sidebar">
       <div className="sidebar-header">
         <h1 className="sidebar-item">ArtArena</h1>
       </div>
       <div className="sidebar-menu">
-        <a href="#home" className="sidebar-item">
+        <a href="#home" className="sidebar-item" onClick={() => navigateToPage('home')}>
           <FaHome className="sidebar-icon" closeSearch={closeSearch}/> Home
         </a>
         <a href="#search" className="sidebar-item" onClick={openSearch}>
@@ -30,7 +34,7 @@ function SideBar({ openModal, openSearch, closeSearch }) {
         <a href="#explore" className="sidebar-item">
           <FaCompass className="sidebar-icon" /> Explore
         </a>
-        <a href="#messages" className="sidebar-item">
+        <a href="#messages" className="sidebar-item"  onClick={() => navigateToPage('messages')}>
           <FaPaperPlane className="sidebar-icon" /> Messages
         </a>
         <a href="#tournaments" className="sidebar-item">
@@ -39,7 +43,7 @@ function SideBar({ openModal, openSearch, closeSearch }) {
         <a href="#notifications" className="sidebar-item">
           <FaBell className="sidebar-icon" /> Notifications
         </a>
-        <a href="#create" className="sidebar-item">
+        <a href="#create" to='/CreatePost' className="sidebar-item" >
           <FaPlus className="sidebar-icon" /> Create
         </a>
         <a href="#settings" className="sidebar-item">
@@ -54,6 +58,8 @@ function SideBar({ openModal, openSearch, closeSearch }) {
           <FaBars className="sidebar-icon" /> More
         </a>
       </div>
+
+      
     </div>
   );
 }
