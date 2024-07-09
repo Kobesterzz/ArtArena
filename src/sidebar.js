@@ -22,7 +22,10 @@ function SideBar({ openModal, openSearch, closeSearch, navigateToPage }) {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <h1 className="sidebar-item">ArtArena</h1>
+        <a onClick={() => navigateToPage('home')}>
+          <h1 className="sidebar-item" >ArtArena</h1>
+        </a>
+        
       </div>
       <div className="sidebar-menu">
         <a href="#home" className="sidebar-item" onClick={() => navigateToPage('home')}>
@@ -43,7 +46,7 @@ function SideBar({ openModal, openSearch, closeSearch, navigateToPage }) {
         <a href="#notifications" className="sidebar-item">
           <FaBell className="sidebar-icon" /> Notifications
         </a>
-        <a href="#create" to='/CreatePost' className="sidebar-item" >
+        <a href="#create" to='/CreatePost' className="sidebar-item" onClick={() => navigateToPage('create')}>
           <FaPlus className="sidebar-icon" /> Create
         </a>
         <a href="#settings" className="sidebar-item">

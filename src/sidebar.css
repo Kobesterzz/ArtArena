@@ -20,6 +20,7 @@
     width: 100%; /* Make sure the header takes full width */
     text-align: left; /* Align text to the left */
     padding-left: 10px;
+    border-bottom: 1px solid #ddd;
   }
   
   .sidebar-header h1 {
@@ -61,3 +62,29 @@
   .sidebar-icon {
     margin-right: 10px;
   }
+
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px; /* Reduce the width for smaller screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      flex-direction: row;
+      padding: 10px 0;
+    }
+    .sidebar-item {
+      justify-content: center;
+      padding: 10px 5px;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+    .sidebar-header, .sidebar-footer {
+      display: none;
+    }
+  }
+  

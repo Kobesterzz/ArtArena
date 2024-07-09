@@ -20,17 +20,23 @@
 .main-content {
   flex: 1;
   overflow-y: auto;
+  margin-left: 250px; /* Match this to the sidebar width */
   padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
 }
 
-/*
-.app {
-  display: flex;
+
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 200px; /* Match this to the reduced sidebar width */
+  }
 }
 
-.content {
-  flex: 1;
-  padding: 20px;
+@media (max-width: 576px) {
+  .main-content {
+    margin-left: 0;
+    margin-top: 60px; /* Add top margin to avoid overlap with the sidebar */
+  }
 }
-*/
-
