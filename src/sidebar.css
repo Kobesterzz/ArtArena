@@ -11,10 +11,45 @@
     align-items: center;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Add this to allow scrolling */
+    overflow-y: auto; 
     
   }
+
+  .search-bar {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+  .search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+  }
   
+  .search-bar .close-btn {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-results {
+   
+    top: 40px; /* Adjust based on your input height */
+    left: 0;
+    
+    
+    width: 100%;
+    z-index: 999; /* Ensure it appears above other content */
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+
   .sidebar-header {
     margin-bottom: 30px;
     width: 100%; /* Make sure the header takes full width */
@@ -61,7 +96,24 @@
   
   .sidebar-icon {
     margin-right: 10px;
+    
   }
+
+  .hide-text .sidebar-item:hover {
+    background-color: transparent;
+  }
+  
+  .hide-text .sidebar-icon:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%; /* Optional: to make the hover effect circular */
+  }
+
+  .hide-text .sidebar-item h1,
+  .hide-text .sidebar-item span {
+  display: none;
+  }
+
+ 
 
   @media (max-width: 768px) {
     .sidebar {

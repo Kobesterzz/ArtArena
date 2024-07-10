@@ -12,59 +12,70 @@ import {
   FaCompass,
   FaBars,
 } from 'react-icons/fa';
-import Modal from './MoreModal';
+import SearchBar from './SearchBar'; // Import SearchBar component
 
+function SideBar({ openModal, navigateToPage }) {
+  const [isSearchActive, setIsSearchActive] = useState(false);
 
-function SideBar({ openModal, openSearch, closeSearch, navigateToPage }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openSearch = () => {
+    setIsSearchActive(true);
+  };
 
+  const closeSearch = () => {
+    setIsSearchActive(false);
+  };
+
+  const handleIconClick = (page) => {
+    navigateToPage(page);
+    closeSearch(); // Close the search bar when any other icon is clicked
+  };
 
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <a onClick={() => navigateToPage('home')}>
-          <h1 className="sidebar-item" >ArtArena</h1>
-        </a>
-        
-      </div>
-      <div className="sidebar-menu">
-        <a href="#home" className="sidebar-item" onClick={() => navigateToPage('home')}>
-          <FaHome className="sidebar-icon" closeSearch={closeSearch}/> Home
-        </a>
-        <a href="#search" className="sidebar-item" onClick={openSearch}>
-          <FaSearch className="sidebar-icon" /> Search
-        </a>
-        <a href="#explore" className="sidebar-item">
-          <FaCompass className="sidebar-icon" /> Explore
-        </a>
-        <a href="#messages" className="sidebar-item"  onClick={() => navigateToPage('messages')}>
-          <FaPaperPlane className="sidebar-icon" /> Messages
-        </a>
-        <a href="#tournaments" className="sidebar-item">
-          <FaTrophy className="sidebar-icon" /> Tournaments
-        </a>
-        <a href="#notifications" className="sidebar-item">
-          <FaBell className="sidebar-icon" /> Notifications
-        </a>
-        <a href="#create" to='/CreatePost' className="sidebar-item" onClick={() => navigateToPage('create')}>
-          <FaPlus className="sidebar-icon" /> Create
-        </a>
-        <a href="#settings" className="sidebar-item">
-          <FaCog className="sidebar-icon" /> Settings
+        <a onClick={() => handleIconClick('home')}>
+          <h1 className={`sidebar-item ${isSearchActive ? 'hide-text' : ''}`}>ArtArena</h1>
         </a>
       </div>
-      <div className="sidebar-footer">
-        <a href="#profile" className="sidebar-item">
-          <FaUser className="sidebar-icon" /> Profile
+      {isSearchActive && <SearchBar closeSearch={closeSearch} />}
+      <div className={`sidebar-menu ${isSearchActive ? 'hide-text' : ''}`}>
+        <a href="#home" className={`sidebar-item ${isSearchActive ? 'sidebar-icon-only' : ''}`} onClick={() => handleIconClick('home')}>
+          <FaHome className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''}`} /> {!isSearchActive && 'Home'}
         </a>
-        <a href="#more" className="sidebar-item" onClick={openModal}>
-          <FaBars className="sidebar-icon" /> More
+        <a href="#search" className={`sidebar-item ${isSearchActive ? 'sidebar-icon-only' : ''}`} onClick={openSearch}>
+          <FaSearch className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''}`} /> {!isSearchActive && 'Search'}
+        </a>
+        <a href="#explore" className={`sidebar-item ${isSearchActive ? 'sidebar-icon-only' : ''}`} onClick={() => handleIconClick('explore')}>
+          <FaCompass className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''}`} /> {!isSearchActive && 'Explore'}
+        </a>
+        <a href="#messages" className={`sidebar-item ${isSearchActive ? 'sidebar-icon-only' : ''}`} onClick={() => handleIconClick('messages')}>
+          <FaPaperPlane className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''}`} /> {!isSearchActive && 'Messages'}
+        </a>
+        <a href="#tournaments" className={`sidebar-item ${isSearchActive ? 'sidebar-icon-only' : ''}`} onClick={() => handleIconClick('tournaments')}>
+          <FaTrophy className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''}`} /> {!isSearchActive && 'Tournaments'}
+        </a>
+        <a href="#notifications" className={`sidebar-item ${isSearchActive ? 'sidebar-icon-only' : ''}`} onClick={() => handleIconClick('notifications')}>
+          <FaBell className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''}`} /> {!isSearchActive && 'Notifications'}
+        </a>
+        <a href="#create" className={`sidebar-item ${isSearchActive ? 'sidebar-icon-only' : ''}`} onClick={() => handleIconClick('create')}>
+          <FaPlus className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''}`} /> {!isSearchActive && 'Create'}
+        </a>
+        <a href="#settings" className={`sidebar-item ${isSearchActive ? 'sidebar-icon-only' : ''}`} onClick={() => handleIconClick('settings')}>
+          <FaCog className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''}`} /> {!isSearchActive && 'Settings'}
         </a>
       </div>
-
-      
+      <div className={`sidebar-footer ${isSearchActive ? 'icon-hover-only' : ''}`}>
+        <a href="#profile" className={`sidebar-item ${isSearchActive ? 'icon-hover-only' : ''}`} onClick={() => handleIconClick('profile')}>
+          <FaUser className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''} `} /> {!isSearchActive && 'Profile'}
+        </a>
+        <a href="#more" className={`sidebar-item ${isSearchActive ? 'sidebar-icon-only' : ''}`} onClick={() => { handleIconClick('more'); openModal(); }}>
+          <FaBars className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''}`} /> {!isSearchActive && 'More'}
+        </a>
+      </div>
     </div>
   );
 }
+
+
 
 export default SideBar;
