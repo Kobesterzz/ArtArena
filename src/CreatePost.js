@@ -29,7 +29,8 @@ function CreatePost({ addPost }) {
     <div className="create-post-page">
       <div className="image-preview">
           {image && <img src={URL.createObjectURL(image)} alt="Preview" />}
-        </div>
+      </div>
+      
       <div className="create-post-container">
         <form className="post-form" onSubmit={handleSubmit}>
           <h2>Create Post</h2>
@@ -45,7 +46,6 @@ function CreatePost({ addPost }) {
           <input type="file" onChange={handleImageChange} />
           <button type="submit">Create Post</button>
         </form>
-        
       </div>
     </div>
   );

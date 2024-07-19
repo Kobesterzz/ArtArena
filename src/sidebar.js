@@ -31,10 +31,10 @@ function SideBar({ openModal, navigateToPage }) {
   };
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isSearchActive ? 'sidebar-expanded' : ''}`}>
       <div className="sidebar-header">
         <a onClick={() => handleIconClick('home')}>
-          <h1 className={`sidebar-item ${isSearchActive ? 'hide-text' : ''}`}>ArtArena</h1>
+          <h1 className={`sidebar-item ${isSearchActive ? 'hide-text'  : ''}`}>ArtArena</h1>
         </a>
       </div>
       {isSearchActive && <SearchBar closeSearch={closeSearch} />}

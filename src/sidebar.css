@@ -1,3 +1,7 @@
+*{
+
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -12,17 +16,22 @@
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto; 
-    
+    z-index: 100;
+    transition: width 0.3s ease, background-color 0.3s ease;
   }
 
   .search-bar {
     background-color: white;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     padding: 5px;
     display: flex;
     align-items: center;
     flex-direction: column;
     z-index: 1000; /* Ensure it appears above other content */
+  }
+
+  .sidebar-expanded {
+    width: 350px;
   }
   .search-bar input {
     border: none;
