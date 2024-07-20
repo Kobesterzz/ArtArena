@@ -5,6 +5,7 @@ import './CreatePost.css'; // Replace with your CSS file name
 function CreatePost({ addPost }) {
   const [postContent, setPostContent] = useState('');
   const [image, setImage] = useState(null);
+  const placeholderImage = 'https://via.placeholder.com/600';
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +29,10 @@ function CreatePost({ addPost }) {
   return (
     <div className="create-post-page">
       <div className="image-preview">
-          {image && <img src={URL.createObjectURL(image)} alt="Preview" />}
+      <img
+          src={image ? URL.createObjectURL(image) : placeholderImage}
+          alt="Preview"
+        />
       </div>
       
       <div className="create-post-container">

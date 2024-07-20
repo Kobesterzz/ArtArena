@@ -12,7 +12,7 @@ import {
   FaCompass,
   FaBars,
 } from 'react-icons/fa';
-import SearchBar from './SearchBar'; // Import SearchBar component
+import SearchBar from './SearchBar'; 
 
 function SideBar({ openModal, navigateToPage }) {
   const [isSearchActive, setIsSearchActive] = useState(false);
@@ -66,10 +66,10 @@ function SideBar({ openModal, navigateToPage }) {
       </div>
       <div className={`sidebar-footer ${isSearchActive ? 'icon-hover-only' : ''}`}>
         <a href="#profile" className={`sidebar-item ${isSearchActive ? 'icon-hover-only' : ''}`} onClick={() => handleIconClick('profile')}>
-          <FaUser className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''} `} /> {!isSearchActive && 'Profile'}
+          <FaUser className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''} `} /> Profile
         </a>
         <a href="#more" className={`sidebar-item ${isSearchActive ? 'sidebar-icon-only' : ''}`} onClick={() => { handleIconClick('more'); openModal(); }}>
-          <FaBars className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''}`} /> {!isSearchActive && 'More'}
+          <FaBars className={`sidebar-icon ${isSearchActive ? 'icon-hover-only' : ''}`} /> More
         </a>
       </div>
     </div>

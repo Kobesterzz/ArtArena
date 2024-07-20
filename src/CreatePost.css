@@ -66,7 +66,7 @@
   justify-content: center;
   align-items: center;
   max-width: 30%;
-  border: 3px black solid;
+  border: 3px rgb(175, 175, 175) solid;
   border-radius: 11px;
 
 }
