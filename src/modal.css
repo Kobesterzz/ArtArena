@@ -9,6 +9,7 @@
   align-items: flex-end;
   justify-content: flex-start;
   padding-left: 250px; /* Adjust this to match the width of the sidebar */
+  z-index: 101;
 }
 
 .modal-content {

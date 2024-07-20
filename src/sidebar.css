@@ -1,5 +1,5 @@
 *{
-
+  transition: all 0.3s ease;
 }
 
 .sidebar {
@@ -20,13 +20,20 @@
     transition: width 0.3s ease, background-color 0.3s ease;
   }
 
+
   .search-bar {
+    position: absolute;
     background-color: white;
     border: 0px solid #ccc;
     padding: 5px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    top: 20px; 
+    left: 20px; 
+    width: 90%; 
+    margin-left:8%;
+    margin-top:20%;
     z-index: 1000; /* Ensure it appears above other content */
   }
 
@@ -48,14 +55,14 @@
   
   .search-results {
    
-    top: 40px; /* Adjust based on your input height */
+    top: 40px; 
     left: 0;
-    
-    
-    width: 100%;
-    z-index: 999; /* Ensure it appears above other content */
+    width: 70%;
+    z-index: 999; 
     max-height: 300px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
   }
   
 
