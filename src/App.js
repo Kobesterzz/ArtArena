@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import './App.css';
+import './css/App.css';
 import SideBar from './sidebar';
 import Modal from './MoreModal';
 import Feed from './Feed';
 import SearchBar from './SearchBar';
-import MessagingPage from './Messaging page/MessagingPage';
+import MessagingPage from './MessagingPage';
 import CreatePost from './CreatePost';
-
-
+import TournamentPage from './TournamentPage';
+import NotificationBar from './NotificationBar';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [showNotificationBar, setShowNotificationBar] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
   const [posts, setPosts] = useState([
     {
@@ -35,6 +36,8 @@ function App() {
   const toggleDarkMode = () => { setIsDarkMode(!isDarkMode); };
   const openSearch = () => setShowSearch(true);
   const closeSearch = () => setShowSearch(false);
+  const openNotificationBar = () => setShowNotificationBar(true);
+  const closeNotificationBar = () => setShowNotificationBar(false);
   const navigateToPage = (page) => setCurrentPage(page);
 
   const addPost = (newPost) => {
@@ -43,12 +46,19 @@ function App() {
 
   return (
     <div className={`Home ${isDarkMode ? 'dark-mode' : ''}`}>
-      <SideBar openModal={openModal} openSearch={openSearch} navigateToPage={navigateToPage}/>
+      <SideBar
+        openModal={openModal}
+        openSearch={openSearch}
+        openNotificationBar={openNotificationBar}
+        navigateToPage={navigateToPage}
+      />
       {showSearch && <SearchBar closeSearch={closeSearch} />}
+      {showNotificationBar && <NotificationBar closeNotificationBar={closeNotificationBar} />}
       <div className="main-content">
-      {currentPage === 'home' && <Feed posts={posts} />}
-      {currentPage === 'messages' && <MessagingPage />}
-      {currentPage === 'create' && <CreatePost addPost={addPost}/>}
+        {currentPage === 'home' && <Feed posts={posts} />}
+        {currentPage === 'messages' && <MessagingPage />}
+        {currentPage === 'create' && <CreatePost addPost={addPost} />}
+        {currentPage === 'tournaments' && <TournamentPage />}
       </div>
       {showModal && (
         <Modal
@@ -59,8 +69,6 @@ function App() {
       )}
     </div>
   );
-
 }
-
 
 export default App;

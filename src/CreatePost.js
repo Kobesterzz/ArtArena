@@ -1,6 +1,6 @@
 // CreatePost.js
 import React, { useState } from 'react';
-import './CreatePost.css'; // Replace with your CSS file name
+import './css/CreatePost.css' // Replace with your CSS file name
 
 function CreatePost({ addPost }) {
   const [postContent, setPostContent] = useState('');

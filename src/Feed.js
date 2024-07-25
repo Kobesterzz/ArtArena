@@ -1,5 +1,5 @@
 import React from 'react';
-import './Feed.css';
+import './css/Feed.css';
 import { FaRegHeart, FaRegComment, FaRegShareSquare } from 'react-icons/fa';
 
 
