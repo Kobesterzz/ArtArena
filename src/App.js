@@ -4,7 +4,7 @@ import SideBar from './sidebar';
 import Modal from './MoreModal';
 import Feed from './Feed';
 import SearchBar from './SearchBar';
-import MessagingPage from './MessagingPage';
+import MessagingPage from './Messaging page/MessagingPage';
 import CreatePost from './CreatePost';
 import TournamentPage from './TournamentPage';
 import NotificationBar from './NotificationBar';
