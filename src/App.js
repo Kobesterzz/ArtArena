@@ -8,6 +8,7 @@ import MessagingPage from './Messaging page/MessagingPage';
 import CreatePost from './CreatePost';
 import TournamentPage from './TournamentPage';
 import NotificationBar from './NotificationBar';
+import ExplorePage from './ExplorePage';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -59,6 +60,7 @@ function App() {
         {currentPage === 'messages' && <MessagingPage />}
         {currentPage === 'create' && <CreatePost addPost={addPost} />}
         {currentPage === 'tournaments' && <TournamentPage />}
+        {currentPage === 'explore' && <ExplorePage posts={posts} />} 
       </div>
       {showModal && (
         <Modal
