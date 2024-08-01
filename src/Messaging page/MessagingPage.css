@@ -24,12 +24,15 @@
   width: 70%;
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
 }
 
 .messages {
   flex-grow: 1;
   padding: 20px;
   overflow-y: auto;
+  width: 100%;
 }
 
 .message {
@@ -54,6 +57,7 @@
   display: flex;
   padding: 10px;
   border-top: 1px solid #ccc;
+  width: 100%;
 }
 
 .message-input input {
@@ -73,4 +77,10 @@
   border-radius: 5px;
   background-color: #007bff;
   color: white;
+}
+
+.select-user {
+  text-align: center;
+  font-size: 1.5em;
+  color: #777;
 }

@@ -4,6 +4,7 @@ import './AccountList.css';
 function AccountList({ accounts, onSelectAccount }) {
   return (
     <div className="account-list">
+      
       {accounts.map(account => (
         <div
           key={account.id}

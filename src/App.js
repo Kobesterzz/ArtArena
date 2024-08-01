@@ -20,18 +20,35 @@ function App() {
     {
       id: 1,
       username: 'artist1',
-      imageUrl: 'https://via.placeholder.com/600',
+      imageUrl: 'https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=60', // Art Image 1
       description: 'Beautiful sunset painting',
     },
     {
       id: 2,
       username: 'artist2',
-      imageUrl: 'https://via.placeholder.com/600',
+      imageUrl: 'https://images.unsplash.com/photo-1554136123-1a636c2a37aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=60', // Art Image 2
       description: 'Abstract art',
     },
-    // Add more placeholder posts here
+    {
+      id: 3,
+      username: 'artist3',
+      imageUrl: 'https://images.unsplash.com/photo-1532635248-3dace48c5c8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=60', // Art Image 3
+      description: 'Landscape painting',
+    },
+    {
+      id: 4,
+      username: 'artist4',
+      imageUrl: 'https://images.unsplash.com/photo-1551802885-92cf33f57e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=60', // Art Image 4
+      description: 'Portrait drawing',
+    },
+    {
+      id: 5,
+      username: 'artist5',
+      imageUrl: 'https://images.unsplash.com/photo-1533142266415-6c043b0650d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=60', // Art Image 5
+      description: 'Modern sculpture',
+    },
   ]);
-
+  
   const openModal = () => { setShowModal(true); };
   const closeModal = () => { setShowModal(false); };
   const toggleDarkMode = () => { setIsDarkMode(!isDarkMode); };
