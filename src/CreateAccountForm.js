@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
-import './css/loginForm.css';
+import './css/CreateAccountForm.css';
 
-const LoginForm = ({ switchToCreateAccount }) => {
+const CreateAccountForm = ({switchToLogin}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { login } = useAuth();
+  const { createAccount } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const isAuthenticated = login(username, password);
-    if (!isAuthenticated) {
-      setError('Invalid username or password');
+    if (username && password) {
+      createAccount(username, password);
+    } else {
+      setError('Please fill in all fields');
     }
   };
 
   return (
-    <div className="login-form">
-      <h2>Login</h2>
+    <div className="create-account-form">
+      <h2>Create Account</h2>
       {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
         <div>
@@ -39,13 +40,13 @@ const LoginForm = ({ switchToCreateAccount }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Login</button>
-      </form>
-      <p>
-        Don't have an account? <button onClick={switchToCreateAccount}>Create Account</button>
+        <button type="submit">Create Account</button>
+        <p>
+        Already have an account? <button onClick={switchToLogin}>Login</button>
       </p>
+      </form>
     </div>
   );
 };
 
-export default LoginForm;
+export default CreateAccountForm;

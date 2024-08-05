@@ -1,11 +1,19 @@
 import React from 'react';
 import './css/modal.css';
+import { useAuth } from './AuthContext';
 
 function Modal({ onClose, toggleDarkMode, isDarkMode }) {
+  const { logout } = useAuth();
+
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
+  };
+
+  const handleLogout = () => {
+    logout();
+    onClose();
   };
 
   return (
@@ -20,6 +28,12 @@ function Modal({ onClose, toggleDarkMode, isDarkMode }) {
             <span>Dark Mode</span>
             <button onClick={toggleDarkMode} className="dark-mode-toggle">
               {isDarkMode ? 'On' : 'Off'}
+            </button>
+          </div>
+          <hr/>
+          <div className="modal-item">
+            <button onClick={handleLogout} className="logout-button">
+              Log Out
             </button>
           </div>
         </div>

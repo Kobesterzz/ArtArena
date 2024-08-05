@@ -105,6 +105,7 @@ import CreatePost from './CreatePost';
 import TournamentPage from './TournamentPage';
 import ExplorePage from './ExplorePage';
 import LoginForm from './LoginForm';
+import CreateAccountForm from './CreateAccountForm';
 import Modal from './MoreModal';
 import './css/App.css';
 
@@ -191,6 +192,7 @@ function App() {
 
 function MainApp(props) {
   const { user } = useAuth();
+  const [isCreatingAccount, setIsCreatingAccount] = useState(false);
 
   return user ? (
     <div className={`Home ${props.isDarkMode ? 'dark-mode' : ''}`}>
@@ -218,7 +220,11 @@ function MainApp(props) {
       )}
     </div>
   ) : (
-    <LoginForm />
+    isCreatingAccount ? (
+      <CreateAccountForm switchToLogin={() => setIsCreatingAccount(false)} />
+    ) : (
+      <LoginForm switchToCreateAccount={() => setIsCreatingAccount(true)} />
+    )
   );
 }
 

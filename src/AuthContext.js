@@ -6,11 +6,12 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [users, setUsers] = useState([]);
 
   const login = (username, password) => {
-    // Replace with actual authentication logic
-    if (username === 'test' && password === 'password') {
-      setUser({ username: 'test' });
+    const foundUser = users.find(user => user.username === username && user.password === password);
+    if (foundUser) {
+      setUser(foundUser);
       return true;
     }
     return false;
@@ -20,8 +21,14 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const createAccount = (username, password) => {
+    const newUser = { username, password };
+    setUsers([...users, newUser]);
+    setUser(newUser);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, createAccount }}>
       {children}
     </AuthContext.Provider>
   );
