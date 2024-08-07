@@ -5,7 +5,7 @@ import './css/NotificationBar.css';
 function NotificationBar({ notifications, closeNotificationBar }) {
   return (
     <div className="notification-bar">
-      <button className="close-button" onClick={closeNotificationBar}>×</button>
+      
       <h2>Notifications</h2>
       {notifications.length > 0 ? (
         <ul>

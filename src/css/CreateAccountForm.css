@@ -1,55 +1,54 @@
-/* CreateAccountForm.css */
 
 .create-account-form {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-  }
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.create-account-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.create-account-form .error {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.create-account-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-account-form form div {
+  margin-bottom: 15px;
+}
+
+.create-account-form label {
+  margin-bottom: 5px;
+}
+
+.create-account-form input {
+  padding: 10px;
   
-  .create-account-form h2 {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .create-account-form .error {
-    color: red;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .create-account-form form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .create-account-form form div {
-    margin-bottom: 15px;
-  }
-  
-  .create-account-form label {
-    margin-bottom: 5px;
-  }
-  
-  .create-account-form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-  }
-  
-  .create-account-form button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .create-account-form button:hover {
-    background-color: #45a049;
-  }
-  
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.create-account-form button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-account-form button:hover {
+  background-color: #45a049;
+}

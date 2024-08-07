@@ -107,6 +107,7 @@ import ExplorePage from './ExplorePage';
 import LoginForm from './LoginForm';
 import CreateAccountForm from './CreateAccountForm';
 import Modal from './MoreModal';
+import ProfilePage from './ProfilePage';
 import './css/App.css';
 
 function App() {
@@ -210,6 +211,7 @@ function MainApp(props) {
         {props.currentPage === 'create' && <CreatePost addPost={props.addPost} />}
         {props.currentPage === 'tournaments' && <TournamentPage />}
         {props.currentPage === 'explore' && <ExplorePage posts={props.posts} />} 
+        {props.currentPage === 'profile' && <ProfilePage />} 
       </div>
       {props.showModal && (
         <Modal
