@@ -23,6 +23,7 @@ function SideBar({ openModal, navigateToPage }) {
 
   const openSearch = () => {
     setIsSearchActive(true);
+    setIsNotificationActive(false);
   };
 
   const closeSearch = () => {
@@ -31,6 +32,7 @@ function SideBar({ openModal, navigateToPage }) {
 
   const openNotificationBar = () => {
     setIsNotificationActive(true);
+    setIsSearchActive(false); 
   };
 
   const closeNotificationBar = () => {
