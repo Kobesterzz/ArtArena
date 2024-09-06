@@ -2,8 +2,13 @@ import React from 'react';
 import { useAuth } from './AuthContext';
 import './css/ProfilePage.css';
 
-function ProfilePage() {
+function ProfilePage({ navigateToPage }) {
   const { user, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigateToPage('landing'); // Navigate to LandingPage after logout
+  };
 
   return (
     <div className="profile-page">
@@ -26,7 +31,7 @@ function ProfilePage() {
         </div>
         <p>Email: {user.email}</p>
         <p>Joined: {new Date(user.joinedDate).toLocaleDateString()}</p>
-        <button onClick={logout} className="logout-button">Log Out</button>
+        <button onClick={handleLogout} className="logout-button">Log Out</button>
       </div>
     </div>
   );
