@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 import './css/CreatePost.css' // Replace with your CSS file name
 
-function CreatePost({ addPost }) {
+function CreatePost({ addPost, navigateToPage }) {
   const [postContent, setPostContent] = useState('');
   const [image, setImage] = useState(null);
   const placeholderImage = 'https://via.placeholder.com/600';
 
-  const handleSubmit = (e) => {
+  /*const handleSubmit = (e) => {
     e.preventDefault();
     if (postContent.trim()) {
       const newPost = {
@@ -20,6 +20,18 @@ function CreatePost({ addPost }) {
       setPostContent('');
       setImage(null);
     }
+  };*/
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newPost = {
+      id: Date.now(),
+        username: 'current_user', // Replace with the actual username
+        imageUrl: image ? URL.createObjectURL(image) : 'https://via.placeholder.com/600',
+        description: postContent,
+    };
+    addPost(newPost);
+    navigateToPage('profile'); // Navigate to the profile page after posting
   };
 
   const handleImageChange = (e) => {

@@ -70,6 +70,10 @@ function App() {
   return (
     <AuthProvider>
       {currentPage === 'landing' && <LandingPage navigateToPage={setCurrentPage} />}
+      {currentPage === 'profile' && (
+        <ProfilePage posts={posts} navigateToPage={setCurrentPage} />
+      )}
+      {currentPage === 'create' && <CreatePost addPost={addPost} navigateToPage={setCurrentPage} />}
       {currentPage !== 'landing' && (
         <MainApp
           showModal={showModal}
