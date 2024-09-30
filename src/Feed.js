@@ -10,7 +10,7 @@ function Feed({ posts=[] }) {
       {posts.map((post) => (
         <div key={post.id} className="post">
           <div className="post-header">
-            <h3>{post.username}</h3>
+            <h3>{posts.username || 'Anonymous'}</h3>
           </div>
           <img src={post.imageUrl} alt={post.description} className="post-image" />
           <div className="post-actions">
@@ -26,5 +26,8 @@ function Feed({ posts=[] }) {
     </div>
   );
 }
+
+
+
 
 export default Feed;

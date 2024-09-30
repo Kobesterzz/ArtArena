@@ -24,35 +24,52 @@ function App() {
   const [posts, setPosts] = useState([
     {
       id: 1,
-      username: 'artist1',
-      imageUrl: 'https://images.unsplash.com/photo-1519923834699-ef0b8abd2261',
-      description: 'Beautiful sunset painting',
+      imageUrl: 'https://www.theadvertisingclub.org/wp-content/uploads/2022/10/iStock-1405987908.jpg',
+      description: 'A futuristic cityscape in a cyberpunk style, glowing neon blues and purples.',
     },
     {
       id: 2,
-      username: 'artist2',
-      imageUrl: 'https://images.unsplash.com/photo-1496171367470-9ed9a91ea931',
-      description: 'Abstract art',
+      imageUrl: 'https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg',
+      description: 'A surreal digital landscape created in Procreate, blending alien skies with abstract forms.',
     },
     {
       id: 3,
-      username: 'artist3',
-      imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
-      description: 'Modern art piece',
+      imageUrl: 'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/886a1a10-5bb5-4bee-9c0a-f181076b2f45/02abcf1f-1e67-4756-83ab-c2cb5c77ca5e.png',
+      description: 'Character concept art for a sci-fi game, featuring a mechanized warrior in a post-apocalyptic world.',
     },
     {
       id: 4,
-      username: 'artist4',
-      imageUrl: 'https://images.unsplash.com/photo-1486591978090-408c64fbd76b',
-      description: 'Nature painting',
+      imageUrl: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTz3jlWGwCfNgvu66abv-HKTOn4XIHBXBmz5MQrzUCwxVz5S4z0',
+      description: 'A charcoal sketch of a tiger, focusing on the intense expression and movement of the wild animal.',
     },
     {
       id: 5,
-      username: 'artist5',
-      imageUrl: 'https://images.unsplash.com/photo-1555696958-c50437d591ac',
-      description: 'Cityscape art',
+      imageUrl: 'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/ec920802-4866-481f-b6d4-556b2db0e744/d8c1f3d4-5942-4f73-b5cf-f341036e9368.png',
+      description: 'Fantasy illustration of a mystical forest, glowing with ethereal light and hidden creatures.',
     },
-  ]);
+    {
+      id: 6,
+      imageUrl: 'https://images.stockcake.com/public/b/4/f/b4f99801-2fee-4237-9606-8307476c7c89/sunset-ocean-waves-stockcake.jpg',
+      description: 'A watercolor painting of a sunset over the ocean, capturing vibrant hues and the motion of the waves.',
+    },
+    {
+      id: 7,
+      imageUrl: 'https://www.aiscribbles.com/img/variant/large-preview/52086/?v=9b9754',
+      description: 'Digital portrait of a woman in abstract cubist style, combining vibrant colors and geometric forms.',
+    },
+    {
+      id: 8,
+      imageUrl: 'https://i.ebayimg.com/images/g/GJYAAOSw2gxY1pFj/s-l1200.webp',
+      description: 'A still life oil painting of a vase filled with sunflowers, emphasizing texture and light.',
+    },
+    {
+      id: 9,
+      imageUrl: 'https://image.cdn2.seaart.ai/2024-03-26/co18qede878c73b8mk10/7d5960a142c931207026a2b22567a6763073b80c_high.webp',
+      description: 'Sci-fi scene featuring a spaceship flying over a distant alien planet, created in Photoshop.',
+    },
+]);
+
+
 
   const openModal = () => { setShowModal(true); };
   const closeModal = () => { setShowModal(false); };
