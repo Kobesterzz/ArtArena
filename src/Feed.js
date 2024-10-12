@@ -7,6 +7,11 @@ import { FaRegHeart, FaRegComment, FaRegShareSquare } from 'react-icons/fa';
 function Feed({ posts=[] }) {
   return (
     <div className="feed">
+      <div>
+        Home
+        <hr></hr>
+      </div>
+      
       {posts.map((post) => (
         <div key={post.id} className="post">
           <div className="post-header">

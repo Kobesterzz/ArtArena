@@ -9,7 +9,7 @@ function LandingPage({ navigateToPage }) {
       <p>Discover amazing art, connect with artists, and share your creations.</p>
       <div className="button-group">
         <button onClick={() => navigateToPage('login')}>Log In</button>
-        <button onClick={() => navigateToPage('signup')}>Sign Up</button>
+        <button onClick={() => navigateToPage('createAccount')}>Sign Up</button>
       </div>
     </div>
   );

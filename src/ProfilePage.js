@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth } from './AuthContext';
+import SideBar from './sidebar';
 import './css/ProfilePage.css';
 
 function ProfilePage({ navigateToPage, posts = [] }) {
@@ -7,14 +8,21 @@ function ProfilePage({ navigateToPage, posts = [] }) {
 
   const handleLogout = () => {
     logout();
-    navigateToPage('landing'); // Navigate to LandingPage after logout
+    navigateToPage('landing');
   };
 
   // Filter posts to show only those created by the logged-in user
-  const userPosts = posts.filter(post => post.userId === user.id);
+  const userPosts = posts.filter(post => post.username === user.username);
+
 
   return (
     <div className="profile-page">
+      <SideBar
+        openModal={() => {}}
+        openSearch={() => {}}
+        openNotificationBar={() => {}}
+        navigateToPage={navigateToPage}
+      />
       <div className="profile-wrapper">
         {/* Profile card on the top left */}
         <div className="profile-card">
