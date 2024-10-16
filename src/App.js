@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
-
 import { AuthProvider, useAuth } from './AuthContext';
 import SideBar from './sidebar';
 import SearchBar from './SearchBar';
@@ -85,14 +83,13 @@ function App() {
   };
 
   return (
-    /*
     <AuthProvider>
       {currentPage === 'landing' && <LandingPage navigateToPage={setCurrentPage} />}
       {currentPage === 'profile' && (
         <ProfilePage posts={posts} navigateToPage={setCurrentPage} />
       )}
       {currentPage === 'create' && <CreatePost addPost={addPost} navigateToPage={setCurrentPage} />}
-      {currentPage !== 'landing' && currentPage !== 'profile' && (
+      {currentPage !== 'landing' && (
         <MainApp
           showModal={showModal}
           setShowModal={setShowModal}
@@ -117,33 +114,15 @@ function App() {
           addPost={addPost}
         />
       )}
-    </AuthProvider>*/
-
-    <Router>
-    <AuthProvider>
-      <Routes>
-        {/* Routes available when not logged in */}
-        <Route path="/landing" element={<LandingPage />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/signup" element={<CreateAccountForm />} />
-
-        {/* Protected routes, only available when logged in */}
-        <Route path="/home" element={<MainApp posts={posts} addPost={addPost} />} />
-        <Route path="/profile" element={<ProfilePage posts={posts} />} />
-        <Route path="/create" element={<CreatePost addPost={addPost} />} />
-        <Route path="/tournaments" element={<TournamentPage />} />
-      </Routes>
     </AuthProvider>
-  </Router>
   );
 }
 
-function MainApp({ posts, addPost }) {
+function MainApp(props) {
   const { user } = useAuth();
   const [isCreatingAccount, setIsCreatingAccount] = useState(false);
 
   return user ? (
-    /*
     <div className={`Home ${props.isDarkMode ? 'dark-mode' : ''}`}>
       <SideBar
         openModal={props.openModal}
@@ -159,13 +138,14 @@ function MainApp({ posts, addPost }) {
         {props.currentPage === 'create' && <CreatePost addPost={props.addPost} />}
         {props.currentPage === 'tournaments' && <TournamentPage />}
         {props.currentPage === 'explore' && <ExplorePage posts={props.posts} />} 
+        {props.currentPage === 'profile' && <ProfilePage navigateToPage={props.navigateToPage} />} 
       </div>
       {props.showModal && (
         <Modal
           onClose={props.closeModal}
           toggleDarkMode={props.toggleDarkMode}
           isDarkMode={props.isDarkMode}
-          navigateToPage={props.navigateToPage}
+          navigateToPage={props.navigateToPage} // Pass navigateToPage to Modal
         />
       )}
     </div>
@@ -175,18 +155,7 @@ function MainApp({ posts, addPost }) {
     ) : (
       <LoginForm switchToCreateAccount={() => setIsCreatingAccount(true)} />
     )
-    */
-      <div className="Home">
-      <SideBar />
-      <div className="main-content">
-        <Feed posts={posts} />
-      </div>
-    </div>
-  ) : (
-    <LandingPage />
-
   );
-
 }
 
 export default App;

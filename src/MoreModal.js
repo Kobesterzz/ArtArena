@@ -2,8 +2,9 @@ import React from 'react';
 import './css/modal.css';
 import { useAuth } from './AuthContext';
 
-function Modal({ onClose, toggleDarkMode, isDarkMode }) {
+function Modal({ isOpen ,onClose, toggleDarkMode, isDarkMode }) {
   const { logout } = useAuth();
+  if (!isOpen) return null;
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
