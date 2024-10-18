@@ -6,11 +6,15 @@
   height: 100vh;
   padding-left: 20%;
   background-color: #f5f5f5;
+  overflow-y: hidden;
 }
 
 .profile-wrapper {
   display: flex;
   width: 100%;
+  max-width: 800px;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -20,7 +24,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
+  width: 100vw;
   margin-right: 20px; /* Adds space between profile card and posts */
 }
 

@@ -83,12 +83,16 @@ function App() {
   };
 
   return (
+   
     <AuthProvider>
       {currentPage === 'landing' && <LandingPage navigateToPage={setCurrentPage} />}
+      {/*}
       {currentPage === 'profile' && (
         <ProfilePage posts={posts} navigateToPage={setCurrentPage} />
       )}
+      
       {currentPage === 'create' && <CreatePost addPost={addPost} navigateToPage={setCurrentPage} />}
+      */}
       {currentPage !== 'landing' && (
         <MainApp
           showModal={showModal}
@@ -115,6 +119,7 @@ function App() {
         />
       )}
     </AuthProvider>
+      
   );
 }
 
@@ -135,10 +140,10 @@ function MainApp(props) {
       <div className="main-content">
         {props.currentPage === 'home' && <Feed posts={props.posts} />}
         {props.currentPage === 'messages' && <MessagingPage />}
-        {props.currentPage === 'create' && <CreatePost addPost={props.addPost} />}
         {props.currentPage === 'tournaments' && <TournamentPage />}
         {props.currentPage === 'explore' && <ExplorePage posts={props.posts} />} 
         {props.currentPage === 'profile' && <ProfilePage navigateToPage={props.navigateToPage} />} 
+        {props.currentPage === 'create' && <CreatePost addPost={props.addPost} />}
       </div>
       {props.showModal && (
         <Modal
