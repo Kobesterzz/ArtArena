@@ -1,61 +1,92 @@
 .explore-page {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .explore-page header {
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .explore-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-    max-width: 1000px; /* Adjust this value as needed */
-    width: 100%;
-  }
-  
-  .explore-item {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .explore-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  .explore-item:hover img {
-    transform: scale(1.1);
-  }
-  
-  .explore-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .explore-item:hover .explore-overlay {
-    opacity: 1;
-  }
-  
-  .explore-overlay h3, .explore-overlay p {
-    margin: 5px 0;
-    text-align: center;
-  }
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.explore-page header {
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.explore-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Each row contains one tall post and two stacked posts */
+.explore-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  height: 400px; /* Adjust to control overall height */
+}
+
+/* Tall column taking up the entire height */
+.column-tall {
+  grid-row: 1 / span 2;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stacked column: Two posts stacked vertically */
+.column-stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stacked {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Explore item styles */
+.explore-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.explore-item:hover img {
+  transform: scale(1.1);
+}
+
+.explore-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.explore-item:hover .explore-overlay {
+  opacity: 1;
+}
+
+.explore-overlay h3,
+.explore-overlay p {
+  margin: 5px 0;
+  text-align: center;
+}
