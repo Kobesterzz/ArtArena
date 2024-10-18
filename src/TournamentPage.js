@@ -9,15 +9,15 @@ function TournamentPage() {
       name: 'Landscape Painting Contest',
       dates: 'July 1 - July 15, 2024',
       description: 'Showcase your best landscape paintings.',
-      image: 'https://images.unsplash.com/photo-1547658717-6d21fc6b997c',
+      image: 'https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg',
       participants: '50',
-      entryRequirements: 'Open to all skill levels'
+      entryRequirements: 'experts only'
     },
     {
       name: 'Abstract Art Challenge',
       dates: 'August 1 - August 20, 2024',
       description: 'Create and submit your most imaginative abstract art pieces.',
-      image: 'https://images.unsplash.com/photo-1553974097-1a43a21e1b84',
+      image: 'https://www.aiscribbles.com/img/variant/large-preview/52086/?v=9b9754',
       participants: '30',
       entryRequirements: 'Open to all skill levels'
     },
@@ -25,7 +25,7 @@ function TournamentPage() {
       name: 'Portrait Drawing Competition',
       dates: 'September 1 - September 15, 2024',
       description: 'Submit your best portrait drawings.',
-      image: 'https://images.unsplash.com/photo-1521747116042-5a810fda9664',
+      image: 'https://skyryedesign.com/wp-content/uploads/2024/06/4222193391251403-pin-image-729x1024.jpg',
       participants: '20',
       entryRequirements: 'Open to all skill levels'
     }
