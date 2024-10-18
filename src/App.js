@@ -20,7 +20,7 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showNotificationBar, setShowNotificationBar] = useState(false);
-  const [currentPage, setCurrentPage] = useState('landing');
+  const [currentPage, setCurrentPage] = useState('home');
   const [posts, setPosts] = useState([
     {
       id: 1,
