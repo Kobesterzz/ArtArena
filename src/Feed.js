@@ -7,7 +7,7 @@ import { FaRegHeart, FaRegComment, FaRegShareSquare } from 'react-icons/fa';
 function Feed({ posts=[] }) {
   return (
     <div className="feed">
-      <div>
+      <div class="feedHeader">
         Home
         <hr></hr>
       </div>
@@ -19,13 +19,14 @@ function Feed({ posts=[] }) {
           </div>
           <img src={post.imageUrl} alt={post.description} className="post-image" />
           <div className="post-actions">
-            <a><FaRegHeart /></a>
-            <a><FaRegComment /></a>
-            <a><FaRegShareSquare /></a>
+            <a><FaRegHeart className="custom-icon"/></a>
+            <a><FaRegComment className="custom-icon"/></a>
+            <a><FaRegShareSquare className="custom-icon"/></a>
           </div>
           <div className="post-description">
             <p>{post.description}</p>
           </div>
+          <hr></hr>
         </div>
       ))}
     </div>

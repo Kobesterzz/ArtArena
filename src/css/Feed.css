@@ -5,25 +5,38 @@
     align-items: center;
     padding: 20px;
   }
+
+  a{
+    color:#fafafa;
+  }
   
+  .feedHeader{
+    color:#fafafa;
+  }
   .post {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: 242424;
+    color:#fafafa;
     border-radius: 6px;
     margin-bottom: 20px;
     width: 100%;
     max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
   }
+
+  .custom-icon {
+    color: #fafafa;
+    font-size: 24px;
+  }
+  
   
   .post-header {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    
   }
   
   .post-image {
     width: 100%;
-    border-bottom: 1px solid #ddd;
+    
   }
   
   .post-description {
@@ -38,6 +51,7 @@
     column-gap: 8%;
     padding-left:3%;
     margin-top: 10px;
+    color: #fafafa;
   }
   
   .post-actions a {
