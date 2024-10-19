@@ -20,37 +20,32 @@
   width: 100%;
 }
 
-/* Each row contains one tall post and two stacked posts */
 .explore-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
   gap: 10px;
-  height: 400px; /* Adjust to control overall height */
 }
 
-/* Tall column taking up the entire height */
-.column-tall {
-  grid-row: 1 / span 2;
-  position: relative;
-  overflow: hidden;
+.explore-row.reversed {
+  grid-template-columns: 1fr 1fr;
+  direction: rtl; /* Flip column order */
 }
 
-/* Stacked column: Two posts stacked vertically */
-.column-stacked {
+.explore-row.reversed .explore-column {
+  direction: ltr; /* Reset content direction inside columns */
+}
+
+.explore-column {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-.stacked {
-  flex: 1;
+  height: 400px; /* Set consistent height for both columns */
   overflow: hidden;
-  position: relative;
 }
 
-/* Explore item styles */
 .explore-item {
   position: relative;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -89,4 +84,16 @@
 .explore-overlay p {
   margin: 5px 0;
   text-align: center;
+}
+
+/* Ensure two stacked items share equal height */
+.explore-stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stacked-item {
+  flex: 1; /* Each stacked post takes half of the height */
+  overflow: hidden;
 }
