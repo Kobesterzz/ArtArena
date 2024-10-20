@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AuthProvider, useAuth } from './AuthContext';
 import SideBar from './sidebar';
 import SearchBar from './SearchBar';
@@ -21,7 +21,7 @@ function App() {
   const [showSearch, setShowSearch] = useState(false);
   const [showNotificationBar, setShowNotificationBar] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
-  const [posts, setPosts] = useState([
+  const initialPosts = [
     {
       id: 1,
       imageUrl: 'https://www.theadvertisingclub.org/wp-content/uploads/2022/10/iStock-1405987908.jpg',
@@ -67,7 +67,16 @@ function App() {
       imageUrl: 'https://image.cdn2.seaart.ai/2024-03-26/co18qede878c73b8mk10/7d5960a142c931207026a2b22567a6763073b80c_high.webp',
       description: 'Sci-fi scene featuring a spaceship flying over a distant alien planet, created in Photoshop.',
     },
-]);
+  ];
+
+
+  //randomize the post
+    const shuffledPosts = (array) => { 
+      return [...array].sort(() => Math.random() - .5);
+    }
+
+  // Shuffle posts only once on initial load
+  const [posts, setPosts] = useState(shuffledPosts(initialPosts));
 
   const openModal = () => { setShowModal(true); };
   const closeModal = () => { setShowModal(false); };
@@ -78,9 +87,7 @@ function App() {
   const closeNotificationBar = () => setShowNotificationBar(false);
   const navigateToPage = (page) => setCurrentPage(page);
 
-  const addPost = (newPost) => {
-    setPosts([newPost, ...posts]);
-  };
+  const addPost = (newPost) => setPosts((prevPosts) => [newPost, ...prevPosts]);
 
   return (
    
