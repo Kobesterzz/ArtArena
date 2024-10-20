@@ -15,7 +15,8 @@ function Feed({ posts=[] }) {
       {posts.map((post) => (
         <div key={post.id} className="post">
           <div className="post-header">
-            <h3>{posts.username || 'Anonymous'}</h3>
+            <img src={post.pfp}  className='pfp' />
+            <h3>{post.username || 'Anonymous'}</h3>
           </div>
           <img src={post.imageUrl} alt={post.description} className="post-image" />
           <div className="post-actions">
@@ -26,7 +27,7 @@ function Feed({ posts=[] }) {
           <div className="post-description">
             <p>{post.description}</p>
           </div>
-          <hr></hr>
+          <hr className="divider"></hr>
         </div>
       ))}
     </div>

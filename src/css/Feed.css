@@ -5,6 +5,10 @@
     align-items: center;
     padding: 20px;
   }
+  
+  .divider{
+    color: #ff00007a;
+  }
 
   a{
     color:#fafafa;
@@ -31,7 +35,15 @@
   
   .post-header {
     padding: 10px;
-    
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+  }
+
+  .pfp{
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
   }
   
   .post-image {
