@@ -3,6 +3,10 @@
     font-family: Arial, sans-serif;
   }
 
+  h2{
+    color:#fafafa;
+  }
+
   .pageContent{
     display: flex;
     justify-content: center;
@@ -43,17 +47,32 @@
     flex-direction: row;
   }
   
+  .tournament-list{
+    column-gap: 20px;
+  }
+
   .tournament {
-    background: #f9f9f9;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Apply blur effect to background */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle white border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    border-radius: 15px; /* Round corners for smoother appearance */
     padding: 20px;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 400px;
-  }
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    color:#fafafa;
+}
+
+.tournament:hover {
+    transform: scale(1.02); /* Slight scale on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
   
   .tournament img {
     max-width: 100%;
