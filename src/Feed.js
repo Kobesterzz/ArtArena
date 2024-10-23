@@ -21,8 +21,11 @@ function Feed({ posts=[] }) {
           <img src={post.imageUrl} alt={post.description} className="post-image" />
           <div className="post-actions">
             <a><FaRegHeart className="custom-icon"/></a>
+            <h1>0</h1>
             <a><FaRegComment className="custom-icon"/></a>
+            <h1>0</h1>
             <a><FaRegShareSquare className="custom-icon"/></a>
+            <h1>0</h1>
           </div>
           <div className="post-description">
             <p>{post.description}</p>
