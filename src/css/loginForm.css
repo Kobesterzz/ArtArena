@@ -12,6 +12,7 @@
   .login-form h2 {
     margin-bottom: 20px;
     text-align: center;
+    color:black
   }
   
   .login-form .error {

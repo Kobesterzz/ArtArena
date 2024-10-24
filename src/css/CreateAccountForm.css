@@ -11,6 +11,7 @@
 .create-account-form h2 {
   margin-bottom: 20px;
   text-align: center;
+  color: black;
 }
 
 .create-account-form .error {
