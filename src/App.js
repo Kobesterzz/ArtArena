@@ -180,11 +180,12 @@ function MainApp(props) {
       )}
     </div>
   ) : (
-    isCreatingAccount ? (
+    /*isCreatingAccount ? (
       <CreateAccountForm switchToLogin={() => setIsCreatingAccount(false)} />
     ) : (
       <LoginForm switchToCreateAccount={() => setIsCreatingAccount(true)} />
-    )
+    )*/
+    <LandingPage/>
   );
 }
 
