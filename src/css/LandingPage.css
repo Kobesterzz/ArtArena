@@ -5,13 +5,34 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #E1E0DC;
     text-align: center;
+    overflow: hidden;
   }
   
   .landing-page h1 {
     font-size: 48px;
-    color: #333;
+    color: #000000;
+  }
+
+  .intro{
+  position: absolute;
+  right:50;
+  top:50;
+  padding-right: 2%;
+  padding-bottom: 10%;
+  }
+
+  .title{
+    color:#74be8a;
+  }
+
+  .bottomContent{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: 2%;
+  padding-bottom: 10%;
   }
   
   .landing-page p {
@@ -20,8 +41,8 @@
   }
   
   .button-group button {
-    background-color: #007bff;
-    color: white;
+    background-color: #74be8a;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 20px;
     margin: 10px;
@@ -33,4 +54,19 @@
   .button-group button:hover {
     background-color: #0056b3;
   }
+
+  .landingPageContent{
+    z-index: 10;
+  }
   
+  .bgIMG{
+    z-index: -1;
+    position:absolute;
+    height:100%;
+    width:auto;
+    bottom:0;
+    right:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
