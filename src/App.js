@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider, useAuth } from './AuthContext';
 import SideBar from './sidebar';
 import SearchBar from './SearchBar';
@@ -108,49 +109,52 @@ function App() {
   const addPost = (newPost) => setPosts((prevPosts) => [newPost, ...prevPosts]);
 
   return (
-   
     <AuthProvider>
-      {currentPage === 'landing' && <LandingPage navigateToPage={setCurrentPage} />}
-      {/*}
-      {currentPage === 'profile' && (
-        <ProfilePage posts={posts} navigateToPage={setCurrentPage} />
-      )}
-      
-      {currentPage === 'create' && <CreatePost addPost={addPost} navigateToPage={setCurrentPage} />}
-      */}
-      {currentPage !== 'landing' && (
-        <MainApp
-          showModal={showModal}
-          setShowModal={setShowModal}
-          isDarkMode={isDarkMode}
-          setIsDarkMode={setIsDarkMode}
-          showSearch={showSearch}
-          setShowSearch={setShowSearch}
-          showNotificationBar={showNotificationBar}
-          setShowNotificationBar={setShowNotificationBar}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          posts={posts}
-          setPosts={setPosts}
-          openModal={openModal}
-          closeModal={closeModal}
-          toggleDarkMode={toggleDarkMode}
-          openSearch={openSearch}
-          closeSearch={closeSearch}
-          openNotificationBar={openNotificationBar}
-          closeNotificationBar={closeNotificationBar}
-          navigateToPage={navigateToPage}
-          addPost={addPost}
-        />
-      )}
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/createAccount" element={<CreateAccountForm />} />
+          <Route path="/home" element={<MainApp
+            showModal={showModal}
+            setShowModal={setShowModal}
+            isDarkMode={isDarkMode}
+            setIsDarkMode={setIsDarkMode}
+            showSearch={showSearch}
+            setShowSearch={setShowSearch}
+            showNotificationBar={showNotificationBar}
+            setShowNotificationBar={setShowNotificationBar}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            posts={posts}
+            setPosts={setPosts}
+            openModal={openModal}
+            closeModal={closeModal}
+            toggleDarkMode={toggleDarkMode}
+            openSearch={openSearch}
+            closeSearch={closeSearch}
+            openNotificationBar={openNotificationBar}
+            closeNotificationBar={closeNotificationBar}
+            navigateToPage={navigateToPage}
+            addPost={addPost}
+          />} />
+        </Routes>
+      </Router>
     </AuthProvider>
-      
+
+  
   );
 }
 
 function MainApp(props) {
   const { user } = useAuth();
   const [isCreatingAccount, setIsCreatingAccount] = useState(false);
+
+  const navigateToPage = (page) => {
+    console.log(`Navigating to: ${page}`);
+    // Navigation logic: Example with React Router's navigate() or window.location
+    // Example: window.location.href = `/${page}`;
+  };
 
   return user ? (
     <div className={`Home ${props.isDarkMode ? 'dark-mode' : ''}`}>
@@ -180,12 +184,7 @@ function MainApp(props) {
       )}
     </div>
   ) : (
-    /*isCreatingAccount ? (
-      <CreateAccountForm switchToLogin={() => setIsCreatingAccount(false)} />
-    ) : (
-      <LoginForm switchToCreateAccount={() => setIsCreatingAccount(true)} />
-    )*/
-    <LandingPage/>
+    <LandingPage navigateToPage={navigateToPage}/>
   );
 }
 
