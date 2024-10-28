@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
 import './css/loginForm.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = ({ switchToCreateAccount }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate('/home');
     const isAuthenticated = login(username, password);
     if (!isAuthenticated) {
       setError('Invalid username or password');

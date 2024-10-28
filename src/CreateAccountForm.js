@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
 import './css/CreateAccountForm.css';
+import { useNavigate } from 'react-router-dom';
 
 const CreateAccountForm = ({ switchToLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { createAccount } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('Username:', username, 'Password:', password);
+  
     if (username && password) {
       createAccount(username, password);
+      navigate('/home');
     } else {
       setError('Please fill in all fields');
     }
