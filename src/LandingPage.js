@@ -11,6 +11,7 @@ function LandingPage({ navigateToPage }) {
   return (
     <div className="landing-page">
       <div className="landingPageContent">
+        <div className="dim"></div>
         <img src={lp} className="bgIMG"></img>
         <h1 className="intro">Welcome to <span className='title'>Art Arena</span></h1>
         <div className="bottomContent">

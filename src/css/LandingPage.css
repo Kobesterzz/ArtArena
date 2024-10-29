@@ -68,9 +68,25 @@
     transition: 1s;
     font-size: 16px;
   }
-  .landingPageContent{
-    z-index: 10;
-  }
+
+  /* Content stays above the overlay */
+.landingPageContent {
+
+  z-index: 5;
+}
+
+
+ /* Background dimming effect */
+.dim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.315); /* Black overlay with 50% opacity */
+  z-index: 1;
+}
+
   
   .bgIMG{
     z-index: -1;
