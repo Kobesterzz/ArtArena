@@ -12,13 +12,15 @@ function LandingPage({ navigateToPage }) {
 
    // Anime.js animation on mount
    useEffect(() => {
-    anime({
-      targets: '.animated-text',
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: 'easeInOutSine',
-      duration: 2000,
-      delay: 500,
-    });
+    const letters = document.querySelectorAll('.animated-text tspan');
+
+    anime.timeline({ easing: 'easeInOutSine' })
+      .add({
+        targets: letters,
+        strokeDashoffset: [anime.setDashoffset, 0],
+        duration: 1000, // Duration for each letter
+        delay: anime.stagger(300), // 300ms delay between letters
+      });
   }, []);
 
 
@@ -29,12 +31,28 @@ function LandingPage({ navigateToPage }) {
       <div className="dim"></div>
       <img src={lp} className="bgIMG"></img>
       <div className="landingPageContent">
-        <div className="rightsideContent">
-          
-          <svg viewBox="0 0 500 100" className="animated-text">
-            <text x="10" y="50" font-size="48">Welcome to Art Arena</text>
-          </svg>
-        </div>
+      <svg viewBox="0 0 1200 300" className="animated-text">
+          <text x="50%" y="50%" font-size="120" dominant-baseline="middle" text-anchor="middle">
+            <tspan class="white">W</tspan>
+            <tspan class="white">e</tspan>
+            <tspan class="white">l</tspan>
+            <tspan class="white">c</tspan>
+            <tspan class="white">o</tspan>
+            <tspan class="white">m</tspan>
+            <tspan class="white">e</tspan>
+            <tspan dx="20" class="white">t</tspan>
+            <tspan class="white">o</tspan>
+            <tspan dx="20" class="green">A</tspan>
+            <tspan class="green">r</tspan>
+            <tspan class="green">t</tspan>
+            <tspan dx="20" class="green">A</tspan>
+            <tspan class="green">r</tspan>
+            <tspan class="green">e</tspan>
+            <tspan class="green">n</tspan>
+            <tspan class="green">a</tspan>
+          </text>
+        </svg>
+
 
         <div className="bottomContent">
           <p>Discover amazing art, connect with artists, and share your creations.</p>
