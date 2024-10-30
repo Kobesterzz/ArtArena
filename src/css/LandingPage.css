@@ -87,7 +87,7 @@
   /* Content stays above the overlay */
 .landingPageContent {
 
-  z-index: 5;
+  z-index: 15;
 }
 
 
@@ -99,12 +99,12 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.315); /* Black overlay with 50% opacity */
-  z-index: 2;
+  z-index: 10;
 }
 
   
   .bgIMG{
-    z-index:-1;
+    z-index:1;
     position:absolute;
     height:100%;
     width:auto;
@@ -113,4 +113,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: cover;
   }

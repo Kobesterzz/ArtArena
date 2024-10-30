@@ -27,11 +27,14 @@ function LandingPage({ navigateToPage }) {
   return (
     <div className="landing-page">
       <div className="dim"></div>
+      <img src={lp} className="bgIMG"></img>
       <div className="landingPageContent">
-        <img src={lp} className="bgIMG"></img>
-        <svg viewBox="0 0 500 100" className="animated-text">
-          <text x="10" y="50" font-size="48">Welcome to Art Arena</text>
-        </svg>
+        <div className="rightsideContent">
+          
+          <svg viewBox="0 0 500 100" className="animated-text">
+            <text x="10" y="50" font-size="48">Welcome to Art Arena</text>
+          </svg>
+        </div>
 
         <div className="bottomContent">
           <p>Discover amazing art, connect with artists, and share your creations.</p>
