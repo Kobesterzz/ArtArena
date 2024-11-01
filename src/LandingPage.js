@@ -6,54 +6,55 @@ import { useNavigate } from 'react-router-dom';
 import anime from 'animejs';
 
 
-function LandingPage({ navigateToPage }) {
+function LandingPage() {
+  const navigate = useNavigate();
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
-   // Anime.js animation on mount
-   useEffect(() => {
+  // Anime.js animation on mount
+  useEffect(() => {
     const letters = document.querySelectorAll('.animated-text tspan');
 
     anime.timeline({ easing: 'easeInOutSine' })
       .add({
         targets: letters,
         strokeDashoffset: [anime.setDashoffset, 0],
-        duration: 1000, // Duration for each letter
-        delay: anime.stagger(300), // 300ms delay between letters
+        duration: 1000,
+        delay: anime.stagger(300),
       });
   }, []);
-
-
-  const navigate = useNavigate();
 
   return (
     <div className="landing-page">
       <div className="dim"></div>
-      <img src={lp} className="bgIMG"></img>
-      <div className="landingPageContent">
-      <svg viewBox="0 0 1200 300" className="animated-text">
+
+      {/* Background image and animated text container */}
+      <div className="bg-container">
+        <img src={lp} className="bgIMG" alt="Background" />
+
+        {/* Positioned animated text SVG */}
+        <svg viewBox="0 0 1200 300" className="animated-text">
           <text x="50%" y="50%" font-size="120" dominant-baseline="middle" text-anchor="middle">
-            <tspan class="white">W</tspan>
-            <tspan class="white">e</tspan>
-            <tspan class="white">l</tspan>
-            <tspan class="white">c</tspan>
-            <tspan class="white">o</tspan>
-            <tspan class="white">m</tspan>
-            <tspan class="white">e</tspan>
-            <tspan dx="20" class="white">t</tspan>
-            <tspan class="white">o</tspan>
-            <tspan dx="20" class="green">A</tspan>
-            <tspan class="green">r</tspan>
-            <tspan class="green">t</tspan>
-            <tspan dx="20" class="green">A</tspan>
-            <tspan class="green">r</tspan>
-            <tspan class="green">e</tspan>
-            <tspan class="green">n</tspan>
-            <tspan class="green">a</tspan>
+            <tspan className="white">W</tspan>
+            <tspan className="white">e</tspan>
+            <tspan className="white">l</tspan>
+            <tspan className="white">c</tspan>
+            <tspan className="white">o</tspan>
+            <tspan className="white">m</tspan>
+            <tspan className="white">e</tspan>
+            <tspan dx="20" className="white">t</tspan>
+            <tspan className="white">o</tspan>
+            <tspan dx="20" className="green">A</tspan>
+            <tspan className="green">r</tspan>
+            <tspan className="green">t</tspan>
+            <tspan dx="20" className="green">A</tspan>
+            <tspan className="green">r</tspan>
+            <tspan className="green">e</tspan>
+            <tspan className="green">n</tspan>
+            <tspan className="green">a</tspan>
           </text>
         </svg>
+      </div>
 
-
+      <div className="landingPageContent">
         <div className="bottomContent">
           <p>Discover amazing art, connect with artists, and share your creations.</p>
           <div className="button-group">
@@ -65,5 +66,6 @@ function LandingPage({ navigateToPage }) {
     </div>
   );
 }
+
 
 export default LandingPage;

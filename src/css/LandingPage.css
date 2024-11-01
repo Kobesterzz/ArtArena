@@ -1,126 +1,127 @@
-/* LandingPage.css */
 .landing-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #E1E0DC;
-    text-align: center;
-    overflow: hidden;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #E1E0DC;
+  text-align: center;
+  overflow: hidden;
+}
+
+.landing-page h1 {
+  font-size: 88px;
+  color: #ffffff;
+}
+
+.animated-text {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  color: #E1E0DC;
   
-  .landing-page h1 {
-    font-size: 88px;
-    color: #ffffff;
-  }
-
-  .animated-text {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    color: #E1E0DC;
-  }
+}
 
 
-  /* Styling for letters */
-  .animated-text tspan {
-  stroke-dasharray: 2000; /* Adjust per letter size */
-  stroke-dashoffset: 2000;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke: rgb(0, 255, 140);
-  font-size: 120px;
-  }
+/* Styling for letters */
+.animated-text tspan {
+stroke-dasharray: 2000; /* Adjust per letter size */
+stroke-dashoffset: 2000;
+stroke-width: 2;
+stroke-linecap: round;
+stroke: rgb(0, 255, 140);
+font-size: 120px;
+}
 
-  /* Color for white letters */
+/* Color for white letters */
 .animated-text .white {
-  stroke: white;
+stroke: rgb(0, 0, 0);
+color: #ffffff;
 }
 
 /* Color for green letters */
 .animated-text .green {
-  stroke: #74be8a; /* Green color for "Art Arena" */
+stroke: #74be8a; /* Green color for "Art Arena" */
 }
 
 
-  /* Animation keyframes */
-  @keyframes drawText {
-    to {
-      stroke-dashoffset: 0; /* Reveal the entire stroke */
-    }
+/* Animation keyframes */
+@keyframes drawText {
+  to {
+    stroke-dashoffset: 0; /* Reveal the entire stroke */
   }
+}
 
-  .bottomContent{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding-left: 2%;
-  padding-bottom: 10%;
-  max-width: 600px;
-  display:flex;
-  flex-direction: column;
-  row-gap:10px;
-  }
-  
-  .landing-page p {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  
-  .button-group button {
-    background-color: #858585;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-  }
-  
-  .button-group button:hover {
-    background-color: #74be8a;
-    transition-timing-function: ease;
-    transition: .5s;
-    font-size: 26px;
-  }
+.bottomContent{
+position: absolute;
+bottom: 0;
+left: 0;
+padding-left: 2%;
+padding-bottom: 10%;
+max-width: 600px;
+display:flex;
+flex-direction: column;
+row-gap:10px;
+}
 
-  .button-group button::after {
-    background-color: #858585;
-    transition-timing-function:ease-out;
-    transition: 1s;
-    font-size: 16px;
-  }
+.landing-page p {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
 
-  /* Content stays above the overlay */
+.button-group button {
+  background-color: #858585;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.button-group button:hover {
+  background-color: #74be8a;
+  transition-timing-function: ease;
+  transition: .5s;
+  font-size: 26px;
+}
+
+.button-group button::after {
+  background-color: #858585;
+  transition-timing-function:ease-out;
+  transition: 1s;
+  font-size: 16px;
+}
+
+/* Content stays above the overlay */
 .landingPageContent {
 
-  z-index: 15;
+z-index: 15;
 }
 
 
- /* Background dimming effect */
+/* Background dimming effect */
 .dim {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.315); /* Black overlay with 50% opacity */
-  z-index: 10;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.315); /* Black overlay with 50% opacity */
+z-index: 10;
 }
 
-  
-  .bgIMG{
-    z-index:1;
-    position:absolute;
-    height:100%;
-    width:auto;
-    bottom:0;
-    right:0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    object-fit: cover;
-  }
+
+.bgIMG{
+  z-index:1;
+  position:absolute;
+  height:100%;
+  width:auto;
+  bottom:0;
+  right:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+}
