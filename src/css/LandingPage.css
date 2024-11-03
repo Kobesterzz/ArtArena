@@ -18,10 +18,10 @@
 .animated-text {
   position: absolute;
   top: 50%; /* Adjust this to move text vertically */
-  left: 40%; /* Adjust this to move text horizontally */
+  left: 70%; /* Adjust this to move text horizontally */
   transform: translate(-50%, -50%);
   z-index: 3; /* Higher z-index to stay above bg image and dim overlay */
-  width: 60%; /* Adjust width to control text size */
+  width: 40%; /* Adjust width to control text size */
   max-width: 1000px;
 }
 
