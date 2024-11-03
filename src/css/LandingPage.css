@@ -14,12 +14,22 @@
   color: #ffffff;
 }
 
+/* Position and style for animated SVG text */
 .animated-text {
+  position: absolute;
+  top: 50%; /* Adjust this to move text vertically */
+  left: 40%; /* Adjust this to move text horizontally */
+  transform: translate(-50%, -50%);
+  z-index: 3; /* Higher z-index to stay above bg image and dim overlay */
+  width: 60%; /* Adjust width to control text size */
+  max-width: 1000px;
+}
+
+.bg-container {
+  position: relative;
   width: 100%;
-  height: auto;
-  margin: 0 auto;
-  color: #E1E0DC;
-  
+  height: 100%;
+  z-index: 1; /* Background container behind everything */
 }
 
 
