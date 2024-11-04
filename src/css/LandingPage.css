@@ -14,22 +14,35 @@
   color: #ffffff;
 }
 
-/* Position and style for animated SVG text */
+
+/* Static SVG text for "Welcome to" */
 .animated-text {
-  position: absolute;
-  top: 50%; /* Adjust this to move text vertically */
-  left: 70%; /* Adjust this to move text horizontally */
-  transform: translate(-50%, -50%);
-  z-index: 3; /* Higher z-index to stay above bg image and dim overlay */
-  width: 40%; /* Adjust width to control text size */
-  max-width: 1000px;
+  font-size: 120px;
+  z-index: 3;
+  fill: white;
 }
+
+/* Typing effect text */
+.typing-text {
+  font-size: 120px;
+  font-family: Arial, sans-serif;
+  color: #74be8a;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 4;
+}
+
+
 
 .bg-container {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Background container behind everything */
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 
@@ -41,12 +54,13 @@ stroke-width: 2;
 stroke-linecap: round;
 stroke: rgb(0, 255, 140);
 font-size: 120px;
+
 }
 
 /* Color for white letters */
 .animated-text .white {
-stroke: rgb(0, 0, 0);
-color: #ffffff;
+stroke: black;
+fill:white;
 }
 
 /* Color for green letters */
