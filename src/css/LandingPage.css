@@ -15,25 +15,7 @@
 }
 
 
-/* Static SVG text for "Welcome to" */
-.animated-text {
-  font-size: 120px;
-  z-index: 3;
-  fill: white;
-}
-
-/* Typing effect text */
-.typing-text {
-  font-size: 120px;
-  font-family: Arial, sans-serif;
-  color: #74be8a;
-  white-space: nowrap;
-  overflow: hidden;
-  z-index: 4;
-}
-
-
-
+/* Background container with positioning for text */
 .bg-container {
   position: relative;
   width: 100%;
@@ -44,6 +26,32 @@
   justify-content: center;
   flex-direction: column;
 }
+
+/* Flex container to keep "Welcome to" and typing text on the same line */
+.text-container {
+  display: flex;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  z-index: 4;
+  column-gap: 10px;
+  
+}
+
+/* Styling for the static "Welcome to" text */
+.static-text {
+  color: white;
+}
+
+/* Typing effect text */
+.typing-text {
+  font-size: 48px;
+  font-family: Arial, sans-serif;
+  color: #74be8a;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 
 
 /* Styling for letters */

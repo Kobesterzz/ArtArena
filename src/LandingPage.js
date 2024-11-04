@@ -58,17 +58,14 @@ function LandingPage() {
     <div className="landing-page">
       <div className="dim"></div>
 
-      {/* Background image and animated text container */}
       <div className="bg-container">
         <img src={lp} className="bgIMG" alt="Background" />
 
-        {/* Positioned animated text SVG */}
-        <svg viewBox="0 0 1200 300" className="animated-text">
-          <text x="50%" y="50%" font-size="120" dominant-baseline="middle" text-anchor="middle">
-            <tspan className="white">Welcome to </tspan>
-          </text>
-        </svg>
-        <span className="typing-text">{text}</span>
+        {/* Flex container to align "Welcome to" and typing text */}
+        <div className="text-container">
+          <span className="static-text">Welcome to</span>
+          <span className="typing-text">{text}</span>
+        </div>
       </div>
 
       <div className="landingPageContent">
