@@ -1,7 +1,7 @@
 // LandingPage.js
 import React, { useEffect, useState } from 'react';
 import './css/LandingPage.css';
-import lp from '/Users/kobesterzz/Documents/ArtArena/src/img/LP.jpg';
+
 import { useNavigate } from 'react-router-dom';
 import anime from 'animejs';
 
@@ -59,7 +59,7 @@ function LandingPage() {
       <div className="dim"></div>
 
       <div className="bg-container">
-        <img src={lp} className="bgIMG" alt="Background" />
+        {/*<img src={} className="bgIMG" alt="Background" />*/}
 
         {/* Flex container to align "Welcome to" and typing text */}
         <div className="text-container">
